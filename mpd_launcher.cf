@@ -1,0 +1,8 @@
+# here you can add options like random, repeat, single, consume
+MPC_OPTIONS=(repeat)
+# MODE could be stream or local
+MODE="local" 
+# specify a streaming url. Note: you have to set MODE to stream
+STREAMS=('http://199.180.72.2:8015' 'http://199.180.72.2:8015')
+# if tracks array is empty all tracks from library gonna be added (only mpd, not mopidy)
+TRACKS=()
