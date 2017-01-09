@@ -117,14 +117,16 @@ function startup() {
     if _check_process ${BACKEND_NAME}
     then
         echo "${NOT_A} ${BACKEND_NAME} already running" 
-        return 0
-                #echo ">>>> Starting ${BACKEND}" && (${BACKEND} 2> /dev/null 1> /dev/null &) && "$MPC" stop && sleep 5 && return 0
     else
         ${BACKEND} 2> /dev/null 1> /dev/null & 
         sleep 1 
         $MPC stop > /dev/null
-        return 0
     fi
+
+    # for raspberry pi 
+    sleep 10
+
+    return 0
 }
 
 function get_backend() {
